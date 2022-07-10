@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+
+:root {
+    --hover-color: rgb(210, 31, 31);
+    --bg-color:rgba(0, 0, 0, 0.6);
+}
+
+*{
+    color: #F9F9F9;
+    scroll-behavior: smooth;
+}
+body {
+    background-image: url(./img/newBG.png);
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+}
+
+.about-img{
+    width: 90%;
+    height: 100%;
+    border-radius: 10px;
+}
+.ipcheck{
+    color: white;
+    line-height: 3rem;
+}
+.ipcheck>h3{
+    text-align: left !important;
+}
+.div-2 {
+    margin-top: 4rem !important;
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    background-color: var(--bg-color);
+    border-radius: 5px;
+
+}
+.news-tab{
+    margin-top: 4rem !important;
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    background-color: var(--bg-color);
+    border-radius: 5px;
+
+    /* background-color: black; */
+    color: white;
+}
+.arp{
+    color: white;
+    line-height: 2rem;
+}
+.arp-img{
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+.arp-list{
+    list-style: none;
+}
+.arp-list li::before {
+    content: "\2022";
+    color: var(--hover-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+
+
+.card img{
+    opacity: 0.3;
+}
+.card:hover{
+    -webkit-filter: drop-shadow(15px 15px 15px var(--hover-color));
+    filter: drop-shadow(0px 0px 5px var(--hover-color));
+    transition: all 0.5s ease;
+    transform: scale(1.1, 1.1);
+
+}
+.ip-img:hover{
+    transition: all 0.3s ease;
+    transform: scale(1.2, 1.2);
+
+}
+.col-tab-2 span{
+    font-weight: bold;
+}
+
+.col-tab-2>h3,.ipcheck>h3, .arp-head{
+    letter-spacing: 0.1rem;
+    /* font-family: 'Work Sans', sans-serif; */
+    font-family: 'Ubuntu', sans-serif;
+    /* font-weight: bolder !important; */
+}
+
+
+
+/* :::::::::::::::::::: Navigation bar css :::::::::::::::::::: */
+nav ul li a{
+    font-family: 'Work Sans', sans-serif;
+
+
+}
+nav ul li {
+    background-color: rgb(0, 0, 0);
+    margin: 3px 0;
+}
+
+nav ul li a:hover{
+    color: var(--hover-color) !important;
+    transition: 0.4 ease-in !important;
+    /* color: red; */
+}
+
+nav>div>a:hover {
+    -webkit-filter: drop-shadow(15px 15px 15px var(--hover-color));
+    filter: drop-shadow(0px 0px 5px var(--hover-color));
+    /* border: 2px solid red !important; */
+    /* background-color: var(--hover-color); */
+    /* -webkit-filter: drop-shadow(15px 15px 15px rgb(255, 0, 0));
+    filter: drop-shadow(0px 0px 5px rgb(187, 15, 15)); */
+}
+/* :::::::::::::::::::: Navigation bar css END :::::::::::::::::::: */
+
+
+/* :::::::::::::::::::: Main  css :::::::::::::::::::: */
+
+.div-1 {
+    margin-top: 6rem !important;
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    background-color: var(--bg-color);
+    border-radius: 5px;
+
+    /* z-index: -9999 !important; */
+    /* border: 1px solid white; */
+}
+
+.col-tab-1,.col-tab-2 {
+    color: white;
+    /* border: 2px solid red; */
+}
+
+.col-tab-1 {
+    letter-spacing: 0.6rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 3rem;
+    font-size: 2rem;
+}
+
+
+.col-tab-2 ol {
+    line-height: 3rem;
+}
+
+/* :::::::::::::::::::: ip address input css :::::::::::::::::::: */
+
+
+.input-tab {
+    width: 100%;
+    background: rgb(0, 0, 0);
+    background: radial-gradient(circle, rgba(0, 0, 0, 1) 77%, rgba(93, 93, 93, 1) 88%, rgba(255, 255, 255, 1) 99%);
+    color: white;
+    /* border: 1px solid black; */
+    /* background: linear-gradient(to left, rgb(255, 255, 255), rgb(0, 0, 0), rgb(255, 255, 255)) */
+    /* border-radius: 2px solid red !important; */
+
+    height: 4rem;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    letter-spacing: .3rem;
+
+}
+
+
+.ip-card{
+    background-color: var(--bg-color);
+    color: red !important;
+}
+.ip-container{
+    font-family: 'Work Sans', sans-serif;
+
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.501);
+    height: 100%;
+    width: 70%;
+}
+.ip-head{
+    font-size: 1.3rem !important;
+    font-family: 'Ubuntu', sans-serif !important;
+    font-weight: bolder;
+
+}
+
+/* :::::::::::::::::::: Main css END :::::::::::::::::::: */
+
+
+/* :::::::::::::::::::: Button css :::::::::::::::::::: */
+.main-btn{
+    font-size:1.3rem !important ;
+}
+.sub-btn {
+    border: none;
+    background-color: var(--hover-color) !important;
+    color: white !important;
+    /* height: 3rem;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    letter-spacing: 0.2rem;
+    padding: 5px 8px; */
+
+    /* background-color: red; */
+    /* width: 20%; */
+}
+.ft-sub-btn{
+    border: none;
+    background-color: var(--hover-color) !important;
+    color: white !important;
+    height: 3rem;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    letter-spacing: 0.2rem;
+    padding: 5px 8px;
+
+    /* background-color: red; */
+    /* width: 20%; */
+
+}
+/* .news-btn{
+    background-color: var(--hover-color) !important;
+    color: white !important;
+} */
+
+.sub-btn:focus {
+    background-color: rgb(255, 255, 255) !important;
+    color: black !important;
+}
+/* :::::::::::::::::::: Button css END :::::::::::::::::::: */
+
+
+
+
+/* :::::::::::::::::::: Footer css :::::::::::::::::::: */
+
+.ft-input {
+
+    height: 4rem;
+    border: none;
+    text-align: center;
+    font-size: 1.2rem;
+    letter-spacing: .3rem;
+    /* border-radius: 10px; */
+
+}
+.ft-hr {
+    display: none;
+}
+.ft input {
+    border: none;
+    width: 60%;
+    height: 3rem;
+    letter-spacing: .1rem;
+    color:black;
+
+}
+.ft-list li {
+    list-style: none;
+    text-align: left;
+}
+footer {
+    background-color: black !important;
+    color: white;
+}
+
+.ft-background {
+    background-color: rgb(0, 0, 0);
+    /* background-color: var(--div-color); */
+}
+
+.row {
+    margin-top: 4rem !important;
+
+}
+.link-style{
+    text-decoration: none !important;
+    border-bottom: 1px solid red;
+     color: #F9F9F9;
+
+}
+
+/* :::::::::::::::::::: Footer css END :::::::::::::::::::: */
+
+
+/* :::::::::::::::::::: Common css :::::::::::::::::::: */
+
+.input-tab::placeholder,.ft-input::placeholder {
+    letter-spacing: .5rem;
+     /*color: red; */
+}
+
+
+
+
+
+/* :::::::::::::::::::: Responsive css :::::::::::::::::::: */
+
+@media only screen and (max-width: 766px) {
+    .ft-hr {
+        width: 80%;
+        margin: 1rem auto;
+        display: block;
+
+    }
+
+    .ft-container,
+    .ft-container>ul>li {
+        text-align: center;
+    }
+
+    .div-1 {
+        text-align: center;
+    }
+
+    .input-tab::placeholder,
+    #mail-input::placeholder {
+        font-size: 5vw;
+        letter-spacing: normal;
+
+    }
+
+    .main-btn {
+        width: 90%;
+        margin: auto;
+    }
+    .col-tab-1 {
+        letter-spacing: 0.3rem;
+        line-height: 2rem;
+        font-size:5vw;
+    }
+    .col-tab-2{
+        border-top: 1px solid white;
+        text-align: left;
+
+    }
+    .card{
+        font-size: 2vw !important;
+        margin-bottom: 5px !important;
+    }
+   .mac-head{
+    margin-top: 2rem !important;
+   }
+   .info-ip{
+    font-size: 1.8vw !important;
+   }
+}
+
+/*:::::::::::::::::::::Result page css ::::::::::::::*/
+.result-box{
+    width: 50%;
+        border-radius: 10px;
+
+}
+
+
+@media only screen and (min-width: 766px){
+    .col-tab-2 ol li{
+        /* position: relative; */
+        margin-left: 4rem;
+    }
+    .col-tab-2>h3{
+        /* position: relative;
+        left: 4rem; */
+        margin-left: 4rem;
+        text-align: left !important;
+    }
+    .col-i-ul{
+        position: relative;
+        left: -5rem;
+    }
+    .col-tab-1 form{
+        margin-top: 3rem !important;
+    }
+}

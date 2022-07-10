@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Scanner - Blogs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/345587e4ce.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md  navbar-dark  ">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-4" href="/">
+                <!-- logo  -->
+                <!-- <img src="https://source.unsplash.com/50x50/?logo,techlogy" alt="#" class="rounded-circle"> -->
+                <img src="{{ url_for('static', filename='img/logo.png') }}" width="100px" height="50px" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ms-auto me-xl-5">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link active text-center  text-light text-hover" aria-current="page"
+                            href="/">Home</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link active text-center  text-light text-hover" aria-current="page"
+                            href="#arp">ARP Spoofing</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center text-light text-hover" href="/ip-lookup">IP Scanner</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center text-light text-hover" href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- about section  -->
+    <div class="container div-2 " id="ip">
+        <div class="row py-4">
+            <div class="col-md-6 ipcheck">
+                <h3 class="text-center text-danger">How to check ip address in WINDOWS using command prompt (CMD)?</h3>
+                <ol>
+                    <li>Open the command prompt: if you have a Start menu in your Windows system, open it and type cmd
+                        into the search bar. If you don’t have a search bar, click Run instead.</li>
+                    <li>Type ipconfig into the command prompt (or the Run box).</li>
+                    <li>Find your IP address within the text that pops up.</li>
+                </ol>
+            </div>
+            <div class="col-md-6 ip-img">
+                <img src="{{ url_for('static', filename='img/window.png') }}" alt="" class="about-img mx-auto d-block">
+                <!-- <img src="https://images.unsplash.com/photo-1624571404553-49e7dbfbc90e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                    alt="" class="about-img mx-auto d-block"> -->
+            </div>
+        </div>
+
+        <div class="row py-4">
+            <div class="col-md-6 ip-img">
+                <img src="{{ url_for('static', filename='img/mac.png') }}" alt="" class="about-img mx-auto d-block">
+                <!-- <img src="https://images.unsplash.com/photo-1515248137880-45e105b710e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2988&q=80"
+                    alt="" class="about-img mx-auto d-block"> -->
+            </div>
+            <div class="col-md-6 ipcheck">
+                <h3 class="text-center text-danger mac-head">How to check ip address in MAC using Terminal?</h3>
+                <ol>
+                    <li>Open the Terminal either by using Spotlight search, or finding it in Applications >> Utilities.
+                    </li>
+                    <li>Enter one of the ipconfig mac commands below to find your IP.
+                        <ul>
+                            <li>For wired connections, enter ipconfig getifaddr en1 into the Terminal and your local IP
+                                will appear.</li>
+                            <li>
+                                For Wi-Fi, enter ipconfig getifaddr en0 and your local IP will appear.</li>
+                            <li>You can also see your public IP address in the Terminal: just type curl ifconfig.me and
+                                your public IP will pop up.</li>
+                        </ul>
+                    </li>
+
+                </ol>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="container div-2 arp ">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-center text-danger pt-4 arp-head" id="arp">What is ARP spoofing?</h2>
+
+            </div>
+            <div class="col-md-8 p-4">
+                <p>ARP spoofing is a type of attack in which a malicious actor sends falsified ARP (Address Resolution
+                    Protocol) messages over a local area network. This results in the linking of an attacker’s MAC
+                    address with the IP address of a legitimate computer or server on the network. Once the attacker’s
+                    MAC address is connected to an authentic IP address, the attacker will begin receiving any data that
+                    is intended for that IP address. ARP spoofing can enable malicious parties to intercept, modify or
+                    even stop data in-transit. ARP spoofing attacks can only occur on local area networks that utilize
+                    the Address Resolution Protocol.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ url_for('static', filename='img/arp.jpeg') }}" alt="" class="arp-img mx-auto d-block">
+                <!-- <img src="https://images.unsplash.com/photo-1515248137880-45e105b710e0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2988&q=80"
+                    alt="" class="arp-img mx-auto d-block"> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-center text-danger arp-head">ARP Spoofing Attacks?</h3>
+            </div>
+            <div class="col-12 p-4 ">
+                The effects of ARP spoofing attacks can have serious implications for enterprises. In their most basic
+                application, ARP spoofing attacks are used to steal sensitive information. Beyond this, ARP spoofing
+                attacks are often used to facilitate other attacks such as:
+                <ul class="arp-list">
+                    <li>Denial-of-service attacks: DoS attacks often leverage ARP spoofing to link multiple IP addresses
+                        with a single target’s MAC address. As a result, traffic that is intended for many different IP
+                        addresses will be redirected to the target’s MAC address, overloading the target with traffic.
+                    </li>
+                    <li>Session hijacking: Session hijacking attacks can use ARP spoofing to steal session IDs, granting
+                        attackers access to private systems and data.
+                    </li>
+                    <li>Man-in-the-middle attacks: MITM attacks can rely on ARP spoofing to intercept and modify traffic
+                        between victims.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- footer   -->
+    <footer>
+        <div class="row ft-background p-4">
+            <div class="col-md-5 ft-container">
+                <h4 class="user-select-none">SUBSCRIBE US</h4>
+                <form class="container mt-4 ft">
+                    <input type="email" placeholder="Your email address" class="text-center ft-input" id="mail-input">
+                    <button class=" ft-sub-btn">Sign Up</button>
+                </form>
+            </div>
+            <hr class="ft-hr">
+            <div class="col-md-3 ft-container ">
+                <h4 class="mb-4 ms-4 user-select-none"><i class="fa-solid fa-link">&nbsp</i>SITE LINKS</h4>
+                <ul class="ft-list">
+                    <li class="my-3 user-select-none"><a href="#arp" class="link-style">ARP Spoofing</a></li>
+                    <li class="my-3 user-select-none"><a href="/ip-lookup" class="link-style">IP Scanner</a></li>
+                    <li class="my-3 user-select-none"><a href="/about" class="link-style">Local IP Finder</a></li>
+                    <li class="my-3 user-select-none"><a href="/about" class="link-style">About Us</a></li>
+                </ul>
+            </div>
+            <hr class="ft-hr">
+            <div class="col-md-4 ft-container ">
+                <h4 class="ms-2 user-select-none"><i class="fa-solid fa-location-dot">&nbsp</i>LOCATION</h4>
+                <div class="container">
+                    <p>JIET Institute
+                        Near Huda Sector - 9, Safidon Road Jind - 126102 (Haryana)</p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <div class=" text-center text-white mt-3">
+        <p class="">Copyright&copy; @rvindrvma</p>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

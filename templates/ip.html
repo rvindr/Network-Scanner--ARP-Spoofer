@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP-Lookup - IP Information Gathering</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/345587e4ce.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md  navbar-dark  ">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-4" href="/">
+                <!-- logo  -->
+                <!-- <img src="https://source.unsplash.com/50x50/?logo,techlogy" alt="#" class="rounded-circle"> -->
+                <img src="{{ url_for('static', filename='img/logo.png') }}" width="100px" height="50px" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ms-auto me-xl-5">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link active text-center  text-light text-hover" aria-current="page"
+                            href="/">Home</a>
+                    </li>
+                   
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center text-light text-hover" href="/ip-lookup">IP Scanner</a>
+                    </li>
+
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center text-light text-hover" href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- main  -->
+    <main>
+
+        <div class="container div-1" id="lookup">
+            <div class="row p-4">
+                <div class="col-md-6 p-4 col-tab-1">
+                    <h2><i class="fa-solid fa-eye"></i>Look up IP Address Location</h2>
+                    
+                    <!-- getting ip address as input  -->
+                    <form class="mt-4" action="/ip-lookup" method="POST">
+                        <input type="text" name="ip_add_value" id="ip" class="input-tab bg-dark mt-3"
+                            placeholder="Enter ip address here">
+                        <button type="submit" class="sub-btn btn main-btn mt-3 mb-4  px-4 ">Search</button>
+                    </form>
+                </div>
+                <div class="col-md-6 p-4  ip-tab">
+                    <div class="container ip-container">
+                            <p><span class="ip-head text-danger"> IP infomation for: </span><span class="info-ip"> {{data.ip}}</span>
+                            <ul>
+                                <li>Version : {{data.version}}</li>
+                                <li>City : {{data.city}}</li>
+                                <li>State/Region : {{data.region}}</li>
+                                <li>Country : {{data.country_name}} ({{data.country_code}})</li>
+                                <li>ASN : {{data.asn}}</li>
+                                <li>ISP : {{data.org}}</li>
+                                <li>Time Zone : {{data.timezone}}</li>
+                                <li>Latitude : {{data.latitude}}</li>
+                                <li>Longitude : {{data.longitude}}</li>
+                            </ul>
+                            </p>
+                    </div>
+
+                    
+                </div>
+            </div>
+            <!-- <form>
+                <input type="text" name="ip_add" id="ip" class="input-tab bg-dark mt-3"
+                    placeholder="Enter ip address here">
+                <button type="submit" class="sub-btn btn main-btn mt-3 mb-4  px-4 ">Scan</button>
+            </form> -->
+        </div>
+
+    </main>
+
+
+
+    <!-- footer   -->
+    <footer>
+        <div class="row ft-background p-4">
+            <div class="col-md-5 ft-container">
+                <h4 class="user-select-none">SUBSCRIBE US</h4>
+                <form class="container mt-4 ft">
+                    <input type="email" placeholder="Your email address" class="text-center ft-input" id="mail-input">
+                    <button class=" ft-sub-btn">Sign Up</button>
+                </form>
+            </div>
+            <hr class="ft-hr">
+            <div class="col-md-3 ft-container ">
+                <h4 class="mb-4 ms-4 user-select-none"><i class="fa-solid fa-link">&nbsp</i>SITE LINKS</h4>
+                <ul class="ft-list">
+                    <li class="my-3 user-select-none"><a href="/about" class="link-style">ARP Spoofing</a></li>
+                    <li class="my-3 user-select-none"><a href="/about" class="link-style">Local IP Finder</a></li>
+                    <li class="my-3 user-select-none"><a href="/about" class="link-style">About Us</a></li>
+                </ul>
+            </div>
+            <hr class="ft-hr">
+            <div class="col-md-4 ft-container ">
+                <h4 class="ms-2 user-select-none"><i class="fa-solid fa-location-dot">&nbsp</i>LOCATION</h4>
+                <div class="container">
+                    <p>JIET Institute
+                        Near Huda Sector - 9, Safidon Road Jind - 126102 (Haryana)</p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <div class=" text-center text-white mt-3">
+        <p class="">Copyright&copy; @rvindrvma</p>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

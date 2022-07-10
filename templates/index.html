@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Scanner -Let's Hack the world</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/345587e4ce.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md  navbar-dark  ">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-4" href="/">
+                <!-- logo  -->
+                <!-- <img src="https://source.unsplash.com/50x50/?logo,techlogy" alt="#" class="rounded-circle"> -->
+                <img src="{{ url_for('static', filename='img/logo.png') }}" width="100px" height="50px" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ms-auto me-xl-5">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link active text-center  text-light text-hover" aria-current="page"
+                            href="/">Home</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center text-light text-hover" href="/ip-lookup">IP Scanner</a>
+                    </li>
+
+                    <li class="nav-item mx-4">
+                        <a class="nav-link text-center text-light text-hover" href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- main  -->
+
+
+
+    <main>
+{% block content %}
+                 {% if show %}
+         <div class="container div-1 d-flex justify-content-center">
+<div class="result-box  p-3 text-center">
+            <table class="table table-borderless text-success">
+                <thead >
+
+                    <tr >
+                        <th class="text-danger">IP</th>
+                        <th class="text-danger">MAC Address</th>
+                    </tr>
+
+
+                </thead>
+                <tbody >
+                    {% for result in scan_result  %}
+                    <tr class="table-group-divider">
+                        <td>{{ result["ip"] }}</td>
+                        <td>{{ result["mac"] }}</td>
+                        {% endfor %}
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+            </div>
+    {% endif %}
+                                {% endblock content %}
+
+        <div class="container div-1">
+            <div class="row p-4">
+                <div class="col-md-6 p-4 col-tab-1">Scan all device within same network and get target mac address
+                    information
+                    <!-- getting ip address as input  -->
+                    <form class="mt-4" action="/postip" method="POST">
+                        <input type="text" name="ip_add" id="ip" class="input-tab bg-dark mt-3"
+                            placeholder="Enter ip address here">
+                        <button type="submit" class="sub-btn btn main-btn mt-3 mb-4  px-4 ">Scan</button>
+                    </form>
+                </div>
+                <div class="col-md-6 p-4 col-tab-2">
+                    <h3 class="col-12 text-center text-danger">Valid way to input IP address</h3>
+                    <ol>
+                        <li>Check your local IP address.
+                        </li>
+                        <li>Add 1 instead of last numbers after dot(.)
+                            <ul class="col-i-ul">
+                                <li >
+                                    For example Your IP address :192.168.8.<span class="text-primary">12</span>
+                                </li>
+                                <li>Change it to :192.168.8.<span class="text-primary">1</span></li>
+                                <li>Old IP(192.168.8.12) ==> New IP(192.168.8.1) to be input</li>
+                            </ul>
+                        </li>
+                        <li>Don't know how to check local ip <strong><a href="/about" class="link-style">Click here</a></strong></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+
+
+    <div class="container  news-tab pb-4 " id="news">
+        <div class="row p-3">
+            <div class="col-12 text-center">
+                <h1 class="text-danger">Cyber Security News</h1>
+                <p>Latest news from Cyber Security industry</p>
+            </div>
+        </div>
+        <div class="row  justify-content-around">
+            <div class="col-xl-4 ">
+                <div class="card bg-dark text-white">
+                    <img src="{{ url_for('static', filename='img/news-2.jpg') }}" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Watch out for survey scams – Week in security with Tony Anscombe</h5>
+                        <p class="card-text">As scammers continue to ask people to take fake surveys, can you recognize
+                            some common telltale signs you're dealing with a scam?</p>
+                        <p class="card-text">Last updated 9 mins ago</p>
+                        <button class="btn sub-btn">Read more</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 ">
+                <div class="card bg-dark text-white">
+                    <img src="{{ url_for('static', filename='img/news-1.jpg') }}" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">Phishing scam poses as Canadian tax agency before Canada Day</h5>
+                        <p class="card-text">The post Phishing scam poses as Canadian tax agency before Canada Day
+                            appeared first on WeLiveSecurity</p>
+                        <p class="card-text">Last updated 3 mins ago</p>
+                        <button class="btn sub-btn">Read more</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 ">
+                <div class="card bg-dark text-white">
+                    <img src="{{ url_for('static', filename='img/news-2.jpg') }}" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title">ZuoRAT Can Take Over Widely Used SOHO Routers</h5>
+                        <p class="card-text">Devices from Cisco, Netgear and others at risk from the multi-stage
+                            malware, which has been active since April 2020 and shows the work.</p>
+                        <p class="card-text">Last updated 30 mins ago</p>
+                        <button class="btn sub-btn">Read more</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- footer   -->
+    <footer>
+        <div class="row ft-background p-4">
+            <div class="col-md-5 ft-container">
+                <h4 class="user-select-none">SUBSCRIBE US</h4>
+                <form class="container mt-4 ft">
+                    <input type="email" placeholder="Your email address" class="text-center ft-input" id="mail-input">
+                    <button class=" ft-sub-btn">Sign Up</button>
+                </form>
+            </div>
+            <hr class="ft-hr">
+            <div class="col-md-3 ft-container ">
+                <h4 class="mb-4 ms-4 user-select-none"><i class="fa-solid fa-link">&nbsp</i>SITE LINKS</h4>
+                <ul class="ft-list">
+                    <li class="my-3 user-select-none"><a href="/about" class="link-style">ARP Spoofing</a></li>
+                    <li class="my-3 user-select-none"><a href="/ip-lookup" class="link-style">IP Scanner</a></li>
+                    <li class="my-3 user-select-none"><a href="/about" class="link-style">Local IP Finder</a></li>
+                    <li class="my-3 user-select-none"><a href="/about" class="link-style">About Us</a></li>
+                </ul>
+            </div>
+            <hr class="ft-hr">
+            <div class="col-md-4 ft-container ">
+                <h4 class="ms-2 user-select-none"><i class="fa-solid fa-location-dot">&nbsp</i>LOCATION</h4>
+                <div class="container">
+                    <p>JIET Institute
+                        Near Huda Sector - 9, Safidon Road Jind - 126102 (Haryana)</p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <div class=" text-center text-white mt-3">
+        <p class="">Copyright&copy; @rvindrvma</p>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
